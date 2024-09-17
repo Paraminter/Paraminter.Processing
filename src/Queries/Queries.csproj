@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Processors.Queries</AssemblyName>
+
+        <RootNamespace>Paraminter.Processors.Queries</RootNamespace>
+
+        <PackageId>Paraminter.Processors.Queries</PackageId>
+        <Description>Defines queries for Paraminter processors.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Paraminter.Cqs.Queries" />
+    </ItemGroup>
+
+</Project>
