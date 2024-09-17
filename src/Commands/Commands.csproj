@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Processors.Commands</AssemblyName>
+
+        <RootNamespace>Paraminter.Processors.Commands</RootNamespace>
+
+        <PackageId>Paraminter.Processors.Commands</PackageId>
+        <Description>Defines commands for Paraminter processors.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Paraminter.Cqs.Commands" />
+    </ItemGroup>
+
+</Project>

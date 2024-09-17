@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Processors</AssemblyName>
+
+        <RootNamespace>Paraminter.Processors</RootNamespace>
+
+        <PackageId>Paraminter.Processors</PackageId>
+        <Description>Provides Paraminter processors.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Paraminter.Commands" />
+        <PackageReference Include="Paraminter.Cqs.Commands.Handlers" />
+        <PackageReference Include="Paraminter.Cqs.Queries.Handlers" />
+
+        <ProjectReference Include="$(SolutionDir)\src\Commands\Commands.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Queries\Queries.csproj" />
+    </ItemGroup>
+
+</Project>
