@@ -7,7 +7,7 @@ using Paraminter.Processors.Commands;
 
 using System;
 
-/// <summary>Decorates an associator by setting the initiation status of the process of associating arguments with parameters beforehand, and the completion status afterwards.</summary>
+/// <summary>Decorates an associator by setting the initiation status beforehand, and the completion status afterwards.</summary>
 /// <typeparam name="TData">The type representing the data used to associate arguments with parameters.</typeparam>
 public sealed class ProcessingAssociatorDecorator<TData>
     : ICommandHandler<IAssociateAllArgumentsCommand<TData>>
