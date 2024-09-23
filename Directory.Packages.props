@@ -9,7 +9,7 @@
 
         <PackageVersion Include="Moq" Version="4.20.70" />
 
-        <PackageVersion Include="Paraminter.Commands" Version="8.1.0-alpha.14" />
+        <PackageVersion Include="Paraminter.Commands" Version="8.1.0-alpha.16" />
         <PackageVersion Include="Paraminter.Cqs.Commands" Version="8.0.0-alpha.26" />
         <PackageVersion Include="Paraminter.Cqs.Commands.Handlers" Version="8.0.0-alpha.26" />
         <PackageVersion Include="Paraminter.Cqs.Queries" Version="8.0.0-alpha.38" />

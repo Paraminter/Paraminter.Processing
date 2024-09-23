@@ -10,10 +10,10 @@ using System;
 /// <summary>Decorates an associator by setting the initiation status beforehand, and the completion status afterwards.</summary>
 /// <typeparam name="TData">The type representing the data used to associate arguments with parameters.</typeparam>
 public sealed class ProcessingAssociatorDecorator<TData>
-    : ICommandHandler<IAssociateAllArgumentsCommand<TData>>
-    where TData : IAssociateAllArgumentsData
+    : ICommandHandler<IAssociateArgumentsCommand<TData>>
+    where TData : IAssociateArgumentsData
 {
-    private readonly ICommandHandler<IAssociateAllArgumentsCommand<TData>> Decoratee;
+    private readonly ICommandHandler<IAssociateArgumentsCommand<TData>> Decoratee;
 
     private readonly ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand> InitiationSetter;
     private readonly ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand> CompletionSetter;
@@ -23,7 +23,7 @@ public sealed class ProcessingAssociatorDecorator<TData>
     /// <param name="initiationSetter">Sets the initiation status of the process of associating arguments with parameters as initiated.</param>
     /// <param name="completionSetter">Sets the completion status of the process of associating arguments with parameters as completed.</param>
     public ProcessingAssociatorDecorator(
-        ICommandHandler<IAssociateAllArgumentsCommand<TData>> decoratee,
+        ICommandHandler<IAssociateArgumentsCommand<TData>> decoratee,
         ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand> initiationSetter,
         ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand> completionSetter)
     {
@@ -33,8 +33,8 @@ public sealed class ProcessingAssociatorDecorator<TData>
         CompletionSetter = completionSetter ?? throw new ArgumentNullException(nameof(completionSetter));
     }
 
-    void ICommandHandler<IAssociateAllArgumentsCommand<TData>>.Handle(
-        IAssociateAllArgumentsCommand<TData> command)
+    void ICommandHandler<IAssociateArgumentsCommand<TData>>.Handle(
+        IAssociateArgumentsCommand<TData> command)
     {
         if (command is null)
         {
