@@ -31,15 +31,15 @@ public sealed class Handle
 
         var sequence = new MockSequence();
 
-        fixture.InitiationSetterMock.InSequence(sequence).Setup(static (handler) => handler.Handle(It.IsAny<ISetProcessArgumentAssociationsInitiationCommand>()));
+        fixture.InitiationSetterMock.InSequence(sequence).Setup(static (handler) => handler.Handle(It.IsAny<ISetProcessInitiationCommand>()));
         fixture.DecorateeMock.InSequence(sequence).Setup((handler) => handler.Handle(command));
-        fixture.CompletionSetterMock.InSequence(sequence).Setup(static (handler) => handler.Handle(It.IsAny<ISetProcessArgumentAssociationsCompletionCommand>()));
+        fixture.CompletionSetterMock.InSequence(sequence).Setup(static (handler) => handler.Handle(It.IsAny<ISetProcessCompletionCommand>()));
 
         Target(fixture, command);
 
-        fixture.InitiationSetterMock.Verify(static (handler) => handler.Handle(It.IsAny<ISetProcessArgumentAssociationsInitiationCommand>()), Times.Once());
+        fixture.InitiationSetterMock.Verify(static (handler) => handler.Handle(It.IsAny<ISetProcessInitiationCommand>()), Times.Once());
         fixture.DecorateeMock.Verify((handler) => handler.Handle(command), Times.Once());
-        fixture.CompletionSetterMock.Verify(static (handler) => handler.Handle(It.IsAny<ISetProcessArgumentAssociationsCompletionCommand>()), Times.Once());
+        fixture.CompletionSetterMock.Verify(static (handler) => handler.Handle(It.IsAny<ISetProcessCompletionCommand>()), Times.Once());
     }
 
     private static void Target<TData>(
