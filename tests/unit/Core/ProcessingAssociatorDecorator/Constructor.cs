@@ -1,11 +1,11 @@
-﻿namespace Paraminter.Processors;
+﻿namespace Paraminter.Processing;
 
 using Moq;
 
 using Paraminter.Commands;
 using Paraminter.Cqs;
 using Paraminter.Models;
-using Paraminter.Processors.Commands;
+using Paraminter.Processing.Commands;
 
 using System;
 

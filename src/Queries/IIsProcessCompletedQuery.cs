@@ -1,4 +1,4 @@
-﻿namespace Paraminter.Processors.Queries;
+﻿namespace Paraminter.Processing.Queries;
 
 using Paraminter.Cqs;
 

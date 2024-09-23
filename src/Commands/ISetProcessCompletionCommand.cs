@@ -1,4 +1,4 @@
-﻿namespace Paraminter.Processors.Commands;
+﻿namespace Paraminter.Processing.Commands;
 
 using Paraminter.Cqs;
 

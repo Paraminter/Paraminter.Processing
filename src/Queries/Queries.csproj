@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <AssemblyName>Paraminter.Processors.Queries</AssemblyName>
+        <AssemblyName>Paraminter.Processing.Queries</AssemblyName>
 
-        <RootNamespace>Paraminter.Processors.Queries</RootNamespace>
+        <RootNamespace>Paraminter.Processing.Queries</RootNamespace>
 
-        <PackageId>Paraminter.Processors.Queries</PackageId>
-        <Description>Defines queries for Paraminter processors.</Description>
+        <PackageId>Paraminter.Processing.Queries</PackageId>
+        <Description>Defines queries for Paraminter processing.</Description>
     </PropertyGroup>
 
     <ItemGroup>
