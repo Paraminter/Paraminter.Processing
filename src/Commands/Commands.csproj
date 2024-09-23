@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <AssemblyName>Paraminter.Processors.Commands</AssemblyName>
+        <AssemblyName>Paraminter.Processing.Commands</AssemblyName>
 
-        <RootNamespace>Paraminter.Processors.Commands</RootNamespace>
+        <RootNamespace>Paraminter.Processing.Commands</RootNamespace>
 
-        <PackageId>Paraminter.Processors.Commands</PackageId>
-        <Description>Defines commands for Paraminter processors.</Description>
+        <PackageId>Paraminter.Processing.Commands</PackageId>
+        <Description>Defines commands for Paraminter processing.</Description>
     </PropertyGroup>
 
     <ItemGroup>

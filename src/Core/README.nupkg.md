@@ -1,5 +1,5 @@
-# Paraminter.Processors
+# Paraminter.Processing
 
-Provides `Paraminter` processors.
+Provides `Paraminter` processing.
 
-See [GitHub](https://github.com/Paraminter/Paraminter.Processors) for more information.
+See [GitHub](https://github.com/Paraminter/Paraminter.Processing) for more information.

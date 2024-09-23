@@ -9,8 +9,8 @@
         
         <Owners>Paraminter</Owners>
         <Authors>ErikWe</Authors>
-        <PackageProjectUrl>https://github.com/Paraminter/Paraminter.Processors</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/Paraminter/Paraminter.Processors</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Paraminter/Paraminter.Processing</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Paraminter/Paraminter.Processing</RepositoryUrl>
         <PackageReadmeFile>README.nupkg.md</PackageReadmeFile>
         <PackageIcon>Logo.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
