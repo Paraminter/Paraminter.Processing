@@ -15,7 +15,7 @@ public sealed class Handle
     [Fact]
     public void NullCommand_ThrowsArgumentNullException()
     {
-        var fixture = FixtureFactory.Create<IAssociateAllArgumentsData>();
+        var fixture = FixtureFactory.Create<IAssociateArgumentsData>();
 
         var result = Record.Exception(() => Target(fixture, null!));
 
@@ -25,9 +25,9 @@ public sealed class Handle
     [Fact]
     public void ValidCommand_ResetsInitiationAndSetsCompletion()
     {
-        var fixture = FixtureFactory.Create<IAssociateAllArgumentsData>();
+        var fixture = FixtureFactory.Create<IAssociateArgumentsData>();
 
-        var command = Mock.Of<IAssociateAllArgumentsCommand<IAssociateAllArgumentsData>>();
+        var command = Mock.Of<IAssociateArgumentsCommand<IAssociateArgumentsData>>();
 
         var sequence = new MockSequence();
 
@@ -44,8 +44,8 @@ public sealed class Handle
 
     private static void Target<TData>(
         IFixture<TData> fixture,
-        IAssociateAllArgumentsCommand<TData> command)
-        where TData : IAssociateAllArgumentsData
+        IAssociateArgumentsCommand<TData> command)
+        where TData : IAssociateArgumentsData
     {
         fixture.Sut.Handle(command);
     }
