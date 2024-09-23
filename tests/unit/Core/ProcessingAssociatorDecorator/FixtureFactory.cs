@@ -10,9 +10,9 @@ using Paraminter.Processors.Commands;
 internal static class FixtureFactory
 {
     public static IFixture<TData> Create<TData>()
-        where TData : IAssociateAllArgumentsData
+        where TData : IAssociateArgumentsData
     {
-        Mock<ICommandHandler<IAssociateAllArgumentsCommand<TData>>> decorateeMock = new(MockBehavior.Strict);
+        Mock<ICommandHandler<IAssociateArgumentsCommand<TData>>> decorateeMock = new(MockBehavior.Strict);
 
         Mock<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>> initiationSetterMock = new(MockBehavior.Strict);
         Mock<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>> completionSetterMock = new(MockBehavior.Strict);
@@ -24,18 +24,18 @@ internal static class FixtureFactory
 
     private sealed class Fixture<TData>
         : IFixture<TData>
-        where TData : IAssociateAllArgumentsData
+        where TData : IAssociateArgumentsData
     {
-        private readonly ICommandHandler<IAssociateAllArgumentsCommand<TData>> Sut;
+        private readonly ICommandHandler<IAssociateArgumentsCommand<TData>> Sut;
 
-        private readonly Mock<ICommandHandler<IAssociateAllArgumentsCommand<TData>>> DecorateeMock;
+        private readonly Mock<ICommandHandler<IAssociateArgumentsCommand<TData>>> DecorateeMock;
 
         private readonly Mock<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>> InitiationSetterMock;
         private readonly Mock<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>> CompletionSetterMock;
 
         public Fixture(
-            ICommandHandler<IAssociateAllArgumentsCommand<TData>> sut,
-            Mock<ICommandHandler<IAssociateAllArgumentsCommand<TData>>> decorateeMock,
+            ICommandHandler<IAssociateArgumentsCommand<TData>> sut,
+            Mock<ICommandHandler<IAssociateArgumentsCommand<TData>>> decorateeMock,
             Mock<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>> initiationSetterMock,
             Mock<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>> completionSetterMock)
         {
@@ -47,9 +47,9 @@ internal static class FixtureFactory
             CompletionSetterMock = completionSetterMock;
         }
 
-        ICommandHandler<IAssociateAllArgumentsCommand<TData>> IFixture<TData>.Sut => Sut;
+        ICommandHandler<IAssociateArgumentsCommand<TData>> IFixture<TData>.Sut => Sut;
 
-        Mock<ICommandHandler<IAssociateAllArgumentsCommand<TData>>> IFixture<TData>.DecorateeMock => DecorateeMock;
+        Mock<ICommandHandler<IAssociateArgumentsCommand<TData>>> IFixture<TData>.DecorateeMock => DecorateeMock;
 
         Mock<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>> IFixture<TData>.InitiationSetterMock => InitiationSetterMock;
         Mock<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>> IFixture<TData>.CompletionSetterMock => CompletionSetterMock;

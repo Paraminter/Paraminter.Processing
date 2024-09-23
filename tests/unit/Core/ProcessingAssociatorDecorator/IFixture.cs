@@ -8,11 +8,11 @@ using Paraminter.Models;
 using Paraminter.Processors.Commands;
 
 internal interface IFixture<TData>
-    where TData : IAssociateAllArgumentsData
+    where TData : IAssociateArgumentsData
 {
-    public abstract ICommandHandler<IAssociateAllArgumentsCommand<TData>> Sut { get; }
+    public abstract ICommandHandler<IAssociateArgumentsCommand<TData>> Sut { get; }
 
-    public abstract Mock<ICommandHandler<IAssociateAllArgumentsCommand<TData>>> DecorateeMock { get; }
+    public abstract Mock<ICommandHandler<IAssociateArgumentsCommand<TData>>> DecorateeMock { get; }
 
     public abstract Mock<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>> InitiationSetterMock { get; }
     public abstract Mock<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>> CompletionSetterMock { get; }
