@@ -15,17 +15,17 @@ public sealed class ProcessingAssociatorDecorator<TData>
 {
     private readonly ICommandHandler<IAssociateArgumentsCommand<TData>> Decoratee;
 
-    private readonly ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand> InitiationSetter;
-    private readonly ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand> CompletionSetter;
+    private readonly ICommandHandler<ISetProcessInitiationCommand> InitiationSetter;
+    private readonly ICommandHandler<ISetProcessCompletionCommand> CompletionSetter;
 
     /// <summary>Instantiates a decorator of an associator, which sets the initiation status beforehand and the completion status afterwards.</summary>
     /// <param name="decoratee">The decorated associator.</param>
-    /// <param name="initiationSetter">Sets the initiation status of the process of associating arguments with parameters as initiated.</param>
-    /// <param name="completionSetter">Sets the completion status of the process of associating arguments with parameters as completed.</param>
+    /// <param name="initiationSetter">Sets the initiation status.</param>
+    /// <param name="completionSetter">Sets the completion status.</param>
     public ProcessingAssociatorDecorator(
         ICommandHandler<IAssociateArgumentsCommand<TData>> decoratee,
-        ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand> initiationSetter,
-        ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand> completionSetter)
+        ICommandHandler<ISetProcessInitiationCommand> initiationSetter,
+        ICommandHandler<ISetProcessCompletionCommand> completionSetter)
     {
         Decoratee = decoratee ?? throw new ArgumentNullException(nameof(decoratee));
 
@@ -41,10 +41,10 @@ public sealed class ProcessingAssociatorDecorator<TData>
             throw new ArgumentNullException(nameof(command));
         }
 
-        InitiationSetter.Handle(SetProcessArgumentAssociationsInitiationCommand.Instance);
+        InitiationSetter.Handle(SetProcessInitiationCommand.Instance);
 
         Decoratee.Handle(command);
 
-        CompletionSetter.Handle(SetProcessArgumentAssociationsCompletionCommand.Instance);
+        CompletionSetter.Handle(SetProcessCompletionCommand.Instance);
     }
 }

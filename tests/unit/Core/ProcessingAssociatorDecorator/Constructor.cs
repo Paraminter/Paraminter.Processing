@@ -18,8 +18,8 @@ public sealed class Constructor
     {
         var result = Record.Exception(() => Target<IAssociateArgumentsData>(
             null!,
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>>(),
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>>()));
+            Mock.Of<ICommandHandler<ISetProcessInitiationCommand>>(),
+            Mock.Of<ICommandHandler<ISetProcessCompletionCommand>>()));
 
         Assert.IsType<ArgumentNullException>(result);
     }
@@ -30,7 +30,7 @@ public sealed class Constructor
         var result = Record.Exception(() => Target(
             Mock.Of<ICommandHandler<IAssociateArgumentsCommand<IAssociateArgumentsData>>>(),
             null!,
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>>()));
+            Mock.Of<ICommandHandler<ISetProcessCompletionCommand>>()));
 
         Assert.IsType<ArgumentNullException>(result);
     }
@@ -40,7 +40,7 @@ public sealed class Constructor
     {
         var result = Record.Exception(() => Target(
             Mock.Of<ICommandHandler<IAssociateArgumentsCommand<IAssociateArgumentsData>>>(),
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>>(),
+            Mock.Of<ICommandHandler<ISetProcessInitiationCommand>>(),
             null!));
 
         Assert.IsType<ArgumentNullException>(result);
@@ -51,16 +51,16 @@ public sealed class Constructor
     {
         var result = Target(
             Mock.Of<ICommandHandler<IAssociateArgumentsCommand<IAssociateArgumentsData>>>(),
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand>>(),
-            Mock.Of<ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand>>());
+            Mock.Of<ICommandHandler<ISetProcessInitiationCommand>>(),
+            Mock.Of<ICommandHandler<ISetProcessCompletionCommand>>());
 
         Assert.NotNull(result);
     }
 
     private static ProcessingAssociatorDecorator<TData> Target<TData>(
         ICommandHandler<IAssociateArgumentsCommand<TData>> decoratee,
-        ICommandHandler<ISetProcessArgumentAssociationsInitiationCommand> initiationSetter,
-        ICommandHandler<ISetProcessArgumentAssociationsCompletionCommand> completionSetter)
+        ICommandHandler<ISetProcessInitiationCommand> initiationSetter,
+        ICommandHandler<ISetProcessCompletionCommand> completionSetter)
         where TData : IAssociateArgumentsData
     {
         return new ProcessingAssociatorDecorator<TData>(decoratee, initiationSetter, completionSetter);
