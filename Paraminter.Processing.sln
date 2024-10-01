@@ -17,6 +17,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "src\Commands\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queries", "src\Queries\Queries.csproj", "{94065878-2340-47B2-B1FF-EA778F07E430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\Core\Core.csproj", "{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5CE03EF0-4CCD-404D-9BCA-6209414C871A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{0F8F8859-338D-4B38-AFE6-82976FF18F68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2E71AB50-D6E7-4996-AB91-F6FB299E1695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessCompletionReadingQueryHandler", "tests\unit\Core\ProcessCompletionReadingQueryHandler\ProcessCompletionReadingQueryHandler.csproj", "{F20EC8E6-23D4-4485-AD05-2CC43A89FF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessInitiationReadingQueryHandler", "tests\unit\Core\ProcessInitiationReadingQueryHandler\ProcessInitiationReadingQueryHandler.csproj", "{5FAED45F-DA89-4994-B896-824D085C5D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessCompletionResettingCommandHandler", "tests\unit\Core\ProcessCompletionResettingCommandHandler\ProcessCompletionResettingCommandHandler.csproj", "{D5D58192-B309-4FD7-B64C-22066DF3BC44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessCompletionSettingCommandHandler", "tests\unit\Core\ProcessCompletionSettingCommandHandler\ProcessCompletionSettingCommandHandler.csproj", "{9D899D14-F547-4C71-A741-483B4AF34C7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessInitiationResettingCommandHandler", "tests\unit\Core\ProcessInitiationResettingCommandHandler\ProcessInitiationResettingCommandHandler.csproj", "{E218C593-1FDA-4804-8515-6CD3225BDD08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessInitiationSettingCommandHandler", "tests\unit\Core\ProcessInitiationSettingCommandHandler\ProcessInitiationSettingCommandHandler.csproj", "{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +51,34 @@ Global
 		{94065878-2340-47B2-B1FF-EA778F07E430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94065878-2340-47B2-B1FF-EA778F07E430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94065878-2340-47B2-B1FF-EA778F07E430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20EC8E6-23D4-4485-AD05-2CC43A89FF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20EC8E6-23D4-4485-AD05-2CC43A89FF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20EC8E6-23D4-4485-AD05-2CC43A89FF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20EC8E6-23D4-4485-AD05-2CC43A89FF37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FAED45F-DA89-4994-B896-824D085C5D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FAED45F-DA89-4994-B896-824D085C5D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FAED45F-DA89-4994-B896-824D085C5D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FAED45F-DA89-4994-B896-824D085C5D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D58192-B309-4FD7-B64C-22066DF3BC44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D58192-B309-4FD7-B64C-22066DF3BC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D58192-B309-4FD7-B64C-22066DF3BC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D58192-B309-4FD7-B64C-22066DF3BC44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D899D14-F547-4C71-A741-483B4AF34C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D899D14-F547-4C71-A741-483B4AF34C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D899D14-F547-4C71-A741-483B4AF34C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D899D14-F547-4C71-A741-483B4AF34C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E218C593-1FDA-4804-8515-6CD3225BDD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E218C593-1FDA-4804-8515-6CD3225BDD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E218C593-1FDA-4804-8515-6CD3225BDD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E218C593-1FDA-4804-8515-6CD3225BDD08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +86,15 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9F9C4499-3091-4902-9954-0FEC58ACA896} = {EBF6F703-A59D-4015-B38C-142918A61E0A}
 		{94065878-2340-47B2-B1FF-EA778F07E430} = {EBF6F703-A59D-4015-B38C-142918A61E0A}
+		{B8F1E69F-4D23-45B6-98A8-8B8D8157B9DB} = {EBF6F703-A59D-4015-B38C-142918A61E0A}
+		{0F8F8859-338D-4B38-AFE6-82976FF18F68} = {5CE03EF0-4CCD-404D-9BCA-6209414C871A}
+		{2E71AB50-D6E7-4996-AB91-F6FB299E1695} = {0F8F8859-338D-4B38-AFE6-82976FF18F68}
+		{F20EC8E6-23D4-4485-AD05-2CC43A89FF37} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
+		{5FAED45F-DA89-4994-B896-824D085C5D33} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
+		{D5D58192-B309-4FD7-B64C-22066DF3BC44} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
+		{9D899D14-F547-4C71-A741-483B4AF34C7B} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
+		{E218C593-1FDA-4804-8515-6CD3225BDD08} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
+		{EC174AF9-9BD3-43FB-ADBC-6B799D641AB8} = {2E71AB50-D6E7-4996-AB91-F6FB299E1695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8BF900F-8E8F-47C1-A16F-1AE237548BDF}
