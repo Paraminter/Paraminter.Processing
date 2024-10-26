@@ -3,6 +3,9 @@
 using Paraminter.Cqs;
 using Paraminter.Processing.Commands;
 
+using System.Threading;
+using System.Threading.Tasks;
+
 /// <summary>Handles commands by setting the completion status.</summary>
 /// <typeparam name="TQuery">The type of the handled commands.</typeparam>
 public sealed class ProcessCompletionSettingCommandHandler<TQuery>
@@ -19,14 +22,15 @@ public sealed class ProcessCompletionSettingCommandHandler<TQuery>
         CompletionSetter = completionSetter ?? throw new System.ArgumentNullException(nameof(completionSetter));
     }
 
-    void ICommandHandler<TQuery>.Handle(
-        TQuery command)
+    async Task ICommandHandler<TQuery>.Handle(
+        TQuery command,
+        CancellationToken cancellationToken)
     {
         if (command is null)
         {
             throw new System.ArgumentNullException(nameof(command));
         }
 
-        CompletionSetter.Handle(SetProcessCompletionCommand.Instance);
+        await CompletionSetter.Handle(SetProcessCompletionCommand.Instance, cancellationToken).ConfigureAwait(false);
     }
 }
