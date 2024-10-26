@@ -3,6 +3,9 @@
 using Paraminter.Cqs;
 using Paraminter.Processing.Commands;
 
+using System.Threading;
+using System.Threading.Tasks;
+
 /// <summary>Handles commands by resetting the initiation status.</summary>
 /// <typeparam name="TQuery">The type of the handled commands.</typeparam>
 public sealed class ProcessInitiationResettingCommandHandler<TQuery>
@@ -19,14 +22,15 @@ public sealed class ProcessInitiationResettingCommandHandler<TQuery>
         InitiationResetter = initiationResetter ?? throw new System.ArgumentNullException(nameof(initiationResetter));
     }
 
-    void ICommandHandler<TQuery>.Handle(
-        TQuery command)
+    async Task ICommandHandler<TQuery>.Handle(
+        TQuery command,
+        CancellationToken cancellationToken)
     {
         if (command is null)
         {
             throw new System.ArgumentNullException(nameof(command));
         }
 
-        InitiationResetter.Handle(ResetProcessInitiationCommand.Instance);
+        await InitiationResetter.Handle(ResetProcessInitiationCommand.Instance, cancellationToken).ConfigureAwait(false);
     }
 }
