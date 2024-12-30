@@ -1,6 +1,5 @@
 ﻿namespace Paraminter.Processing;
 
-using Paraminter.Cqs;
 using Paraminter.Processing.Queries;
 
 using System.Threading;
